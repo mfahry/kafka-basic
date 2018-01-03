@@ -30,7 +30,7 @@ api = Api(app)
 class Routes(Resource):
     def post(self, params):
         body = request.json
-        return {status: params}
+        return {"status": params}
 
 api.add_resource(Routes, '/<string:params>')
 
