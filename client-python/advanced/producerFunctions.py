@@ -38,13 +38,11 @@ class ProducerFunctions:
 
     def send_kafka(self, params, topic):
         #self.producer.produce(topic, params, callback=ProducerFunctions.delivery_callback)
-        self.producer.produce('transaction', 'test-hallo')
+        self.producer.produce(topic, params)
         self.close_kafka()
 
     def transactionHandling(self, params):
         self.send_kafka(params, self.topics[0])
-        return 'transaction'
-	#self.send_kafka(params, self.topics[0])
 
     def transactionWithFraudHandling(self, params):
         self.send_kafka(params, self.topics[1])

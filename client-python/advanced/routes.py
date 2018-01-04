@@ -33,11 +33,11 @@ class Routes(Resource):
         body = request.json
 
         pf = ProducerFunctions()
-        
+
         if params == 'transaction':
-            result = pf.transactionHandling(body)
+            result = pf.transactionHandling(str(body))
         elif params == 'transactionWithFraud':
-            result = pf.transactionWithFraudHandling(body)
+            result = pf.transactionWithFraudHandling(str(body))
         return {"status": 200}
 
 api.add_resource(Routes, '/<string:params>')
