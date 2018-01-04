@@ -31,7 +31,10 @@ api = Api(app)
 class Routes(Resource):
     def post(self, params):
         body = request.json
-        return {"status": params}
+
+        pf = ProducerFunctions()
+        pf.transactionHandling(body)
+        return body
 
 api.add_resource(Routes, '/<string:params>')
 
