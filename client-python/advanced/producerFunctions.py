@@ -26,7 +26,7 @@ class ProducerFunctions:
     broker = '10.128.0.2:9092'
     topics = ("transaction", "transactionWithFraud")
 
-    def __init__(self, argv):
+    def __init__(self):
         conf = {'bootstrap.servers': ProducerFunctions.broker}
         self.producer = Producer(**conf)
 
@@ -37,14 +37,17 @@ class ProducerFunctions:
             sys.stderr.write('%% Message delivered to %s [%d] @ %o\n' % (msg.topic(), msg.partition(), msg.offset()))
 
     def send_kafka(self, params, topic):
-        self.producer.produce(topic, params, callback=ProducerFunctions.delivery_callback)
-        self.producer.poll(0)
+        #self.producer.produce(topic, params, callback=ProducerFunctions.delivery_callback)
+        self.producer.produce('transaction', 'test-hallo')
+        self.close_kafka()
 
     def transactionHandling(self, params):
-        self.send_kafka(params, topics[0])
+        self.send_kafka(params, self.topics[0])
+        return 'transaction'
+	#self.send_kafka(params, self.topics[0])
 
     def transactionWithFraudHandling(self, params):
-        self.send_kafka(params, topics[1])
+        self.send_kafka(params, self.topics[1])
 
     def close_kafka(self):
         self.producer.flush()
