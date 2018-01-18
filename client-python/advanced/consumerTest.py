@@ -6,8 +6,14 @@ c.subscribe(['transaction'])
 running = True
 while running:
     msg = c.poll()
+    print(type(msg))
+    
     if not msg.error():
-        print('Received message: %s' % msg.value().decode('utf-8'))
+        #change to FDS microservices
+        url = 'http://localhost:8080'
+        data = open('example.json','r')
+        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+        r = requests.post(url, data=json.dumps(data), headers=headers)
     elif msg.error().code() != KafkaError._PARTITION_EOF:
         print(msg.error())
         running = False
