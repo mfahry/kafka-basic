@@ -1,7 +1,6 @@
 from confluent_kafka import avro
 from confluent_kafka.avro import AvroProducer
 from confluent_kafka.avro.serializer import (KeySerializerError,ValueSerializerError)
-from tests.avro.mock_schema_registry_client import MockSchemaRegistryClient
 
 class ProducerFunctions:
     broker = '172.18.133.252:9092'
