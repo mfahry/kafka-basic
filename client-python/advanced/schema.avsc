@@ -4,50 +4,10 @@
     "doc": "transaction schema",
     "namespace": "python.transaction.schema",
     "fields": [
-        {
-            "name": "nokartu",
-            "doc": "nokartu",
-            "type": ["string"]
-        },
-        {
-            "name": "“amounttransaction”",
-            "doc": "amounttransaction",
-            "type": ["string"]
-        },
-        {
-            "name": "terminaltype",
-            "doc": "terminaltype",
-            "type": ["string"]
-        },
-        {
-            "name": "terminalid",
-            "doc": "terminalid",
-            "type": ["string"]
-        },
-        {
-            "name": "terminalinformation",
-            "doc": "terminalinformation",
-            "type": ["string"]
-        },
-        {
-            "name": "statustransaction",
-            "doc": "statustransaction",
-            "type": ["string"]
-        },
-        {
-            "name": "transdate",
-            "doc": "transdate",
-            "type": ["string"]
-        },
-        {
-            "name": "transtime",
-            "doc": "transtime",
-            "type": ["string"]
-        },
-        {
-            "name": "descriptiontransaction",
-            "doc": "descriptiontransaction",
-            "type": ["string"]
-        }
+      {"name":"id","type":"int"},
+      {"name":"created","type":"string"},
+      {"name":"product","type":"string"},
+      {"name":"price","type":"double"},
+      {"name":"qty", "type":"int"}
     ]
 }
