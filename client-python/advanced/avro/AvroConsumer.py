@@ -3,7 +3,7 @@ from confluent_kafka.avro import AvroConsumer
 from confluent_kafka.avro.serializer import SerializerError
 
 c = AvroConsumer({'bootstrap.servers': '10.128.0.4:9092', 'group.id': 'groupid', 'schema.registry.url': 'http://localhost:8081'})
-c.subscribe(['my_topic'])
+c.subscribe(['my_topics'])
 running = True
 while running:
     try:
