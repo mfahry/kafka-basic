@@ -12,6 +12,6 @@
       {"name": "statustransaction","type": "string"},
       {"name": "transdate","type": "string"},
       {"name": "transtime","type": "string"},
-      {"name": "descriptiontranction","type": "string"},
+      {"name": "descriptiontranction","type": "string"}
     ]
 }
