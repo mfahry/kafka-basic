@@ -4,6 +4,14 @@
     "doc": "basic schema",
     "namespace": "python.test.basic",
     "fields": [
-      {"name":"name","type":"string"}
+      {"name":"nokartu","type":"string"},
+      {"name":"amounttransaction","type":"string"},
+      {"name":"terminaltype","type":"string"},
+      {"name":"terminalid","type":"string"},
+      {"name":"terminalinformation","type":"string"},
+      {"name":"statustransaction","type":"string"},
+      {"name":"transdate","type":"string"},
+      {"name":"transtime","type":"string"},
+      {"name":"descriptiontranction","type":"string"},
     ]
 }
