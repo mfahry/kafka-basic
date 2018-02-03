@@ -1,0 +1,9 @@
+{
+    "name": "basic",
+    "type": "record",
+    "doc": "basic schema",
+    "namespace": "python.test.basic",
+    "fields": [
+      {"name":"name","type":"string"}
+    ]
+}

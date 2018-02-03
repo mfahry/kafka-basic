@@ -1,1 +1,1 @@
-python consumer_v1.py
+python consumer.py
